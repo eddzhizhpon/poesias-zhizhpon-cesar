@@ -1,0 +1,7 @@
+{
+  "name": "poesias-zhizhpon-cesar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

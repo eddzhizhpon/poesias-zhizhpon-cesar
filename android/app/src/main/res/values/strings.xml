@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">poesias-zhizhpon-cesar</string>
+    <string name="title_activity_main">poesias-zhizhpon-cesar</string>
+    <string name="package_name">ec.edu.ups.examen.edd</string>
+    <string name="custom_url_scheme">ec.edu.ups.examen.edd</string>
+</resources>

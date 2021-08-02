@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Publicación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> {{ post.title }}</ion-card-title>
+      <ion-card-subtitle>{{ post.user?.displayName }}  </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      {{ post.text }}
+    </ion-card-content>
+    <ion-grid>
+     <ion-row class="ion-text-center ion-align-items-center">
+       <ion-col size="12" class="ion-text-center">
+         <ion-img *ngIf="post.image" style="width: 100px;margin: auto;" [src]="post.image?.url"></ion-img>
+       </ion-col>
+     </ion-row>
+     <ion-list id="labels-list">
+      <ion-list-header>Comentarios</ion-list-header>
+      <ion-item *ngFor="let c of post.comentList" >
+        <ion-label>
+          <p>
+            {{c}}
+          </p>
+        </ion-label>
+      </ion-item>
+        
+      </ion-list>
+  
+      <ion-item>
+        <ion-label position="stacked">Comentario:</ion-label>
+        <ion-input type="text" [(ngModel)]="comment"></ion-input>
+      </ion-item>
+      <ion-button color="success" (click)="addComment()" expand="block">
+        <ion-icon name="checkmark" slot="start"></ion-icon>
+        Comentar
+      </ion-button>
+   </ion-grid>
+   
+ </ion-card>
+</ion-content>

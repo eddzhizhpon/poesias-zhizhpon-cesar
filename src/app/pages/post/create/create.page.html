@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Publicar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Publicar</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-grid>
+     <ion-row class="ion-text-center ion-align-items-center">
+       <ion-col size="12" class="ion-text-center">
+         <ion-img style="width: 100px;margin: auto;" [src]="post.image?.url"></ion-img>
+       </ion-col>
+     </ion-row>
+     <ion-row class="ion-align-items-center">
+       <ion-col size="12" class="ion-text-center">
+         <app-take-photo source="none" (imageSelected)="imageSelectedEvt($event)" 
+         (uploadFinished)="uploadFinishedEvt($event)"></app-take-photo>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+ </ion-card>
+
+ <ion-item>
+  <ion-label position="stacked">Título:</ion-label>
+  <ion-input type="text" [(ngModel)]="post.title"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Poesía:</ion-label>
+  <ion-textarea  type="text" [(ngModel)]="post.text"></ion-textarea>
+</ion-item>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button color="success" (click)="createPost()" expand="block">
+        <ion-icon name="checkmark" slot="start"></ion-icon>
+        Publicar
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
